@@ -30,8 +30,7 @@ def main():
             elif speaker == "sys":
                 history.append(f"### Assistant: {txt}")
 
-        # skip if we somehow only have the system line
-        if len(history) <= 2:  # just System (and maybe Situation) = no dialog
+        if len(history) <= 2:
             continue
 
         text = "\n".join(history) + "\n<|end|>"
